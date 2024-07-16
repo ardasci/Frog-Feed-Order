@@ -17,15 +17,16 @@ public class MoveManager : MonoBehaviour
     }
     void Update()
     {
-        //sað clicki frog koduna ekle
-        if (Input.GetMouseButtonDown(1) && isGameContinue)
-        {
-            Moves--;
-            moveTxt.text = Moves.ToString() + " moves";
-        }
+        ////sað clicki frog koduna ekle
+        //if (Input.GetMouseButtonDown(1) && isGameContinue)
+        //{
+        //    Moves--;
+        //    moveTxt.text = Moves.ToString() + " moves";
+        //}
 
         if (Moves<=0)
         {
+            moveTxt.text = Moves.ToString() + " moves";
             isGameContinue = false;
             losePanel.SetActive(true);
         }
@@ -33,6 +34,7 @@ public class MoveManager : MonoBehaviour
         {
             isGameContinue = true;
             losePanel.SetActive(false);
+            moveTxt.text = Moves.ToString() + " moves";
         }
     }
 }
